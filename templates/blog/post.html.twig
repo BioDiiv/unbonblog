@@ -4,7 +4,9 @@
     PostId: {{ post_id }}
 
     {% for post in posts %}
-        {{ post.published|date('Y-m-d H:i:s') }}
+        <p>
+            {{ post.published|date('Y-m-d H:i:s') }}
+        </p>
     {% endfor %}
 
 {% endblock %}
