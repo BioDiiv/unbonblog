@@ -2,19 +2,46 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+        <a class="navbar-brand" href="/"><h1>Un bon blog</h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="/about">A propos</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link text-dark" href="mailto:unbonblog@lebonblog.com">Contact</a>
+            </li>
+        </div>
+        </nav>
+    </header>
+
+    <section class="content">
+        {% for post in posts %}
+            <div class="card shadow-sm m-5 border-0">
+                <img class="card-img-top" src="https://source.unsplash.com/random/800x150" alt="Card image cap">
+                <div class="card-body pl-3 pr-3">
+                    <h5 class="card-title">Article du blog</h5>
+                    <p class="card-text">{{ post }}</p>
+                    <a href="#" class="btn btn-primary">Lire</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
 
 
-    {% for post in posts %}
-        {{ post }}
-    {% endfor %}
+    <!-- Footer -->
+    <footer style="height:50px;" class="bg-secondary d-flex align-items-center shadow-sm">
+
+    <!-- Copyright -->
+    <div class="container text-center font-weight-bold text-dark">Copyright @unbonblog</div>
+    <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
 {% endblock %}
