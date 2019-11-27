@@ -1,5 +1,8 @@
 doctrine:
     dbal:
+        driver: 'sqlite'
+        server_version: '3.28"
+
         url: '%env(resolve:DATABASE_URL)%'
 
     orm:
