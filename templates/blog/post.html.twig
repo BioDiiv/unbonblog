@@ -1,12 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    PostId: {{ post_id }}
 
-    {% for post in posts %}
-        <p>
-            {{ post.published|date('Y-m-d H:i:s') }}
-        </p>
-    {% endfor %}
+    <p>
+        {{ post.published|date('Y-m-d H:i:s') }}
+    </p>
 
 {% endblock %}

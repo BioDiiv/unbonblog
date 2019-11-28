@@ -13,7 +13,28 @@ class BlogController extends AbstractController
      */
     public function homePage()
     {
+        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
+        $posts = $repository->findAll();
 
+        return $this->render('blog/homepage.html.twig', [
+            'posts' => $posts,
+            ]);
+    }
+
+    /**
+     * @Route("/post/{postId}", name="postById")
+     */
+    public function post(int $postId)
+    {
+        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
+        $post = $repository->find($postId);
+
+        return $this->render('blog/post.html.twig', [
+            'post' => $post,
+            ]);
+    }
+
+    public function addPost(){
         $entityManager = $this->getDoctrine()->getManager();
         $post = new PostEntity();
         $post->setTitle('Titre');
@@ -22,25 +43,5 @@ class BlogController extends AbstractController
         $post->setPublished(new DateTime);
         $entityManager->persist($post);
         $entityManager->flush();
-
-        $array = array();
-        array_push($array, "apple", "raspberry", "orange");
-        return $this->render('blog/homepage.html.twig', [
-                           'posts' => $array,
-                       ]);
-    }
-    /**
-     * @Route("/post/{postId}", name="app_post")
-     */
-    public function post($postId)
-    {
-
-        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
-        $posts = $repository->findAll();
-
-        return $this->render('blog/post.html.twig', [
-            'page_title' => 'Article',
-            'posts' => $posts,
-            'post_id' => $postId]);
     }
 }
