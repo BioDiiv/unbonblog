@@ -5,6 +5,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\PostEntity;
 use \DateTime;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class BlogController extends AbstractController
 {
@@ -34,7 +36,29 @@ class BlogController extends AbstractController
             ]);
     }
 
+    /**
+     * @Route("/new", name="newPost")
+     */
     public function addPost(){
+        $post = new PostEntity();
+        $post->setTitle('Titre');
+        $post->setUrl('url');
+        $post->setContent('Content here');
+        $post->setPublished(new DateTime);
+
+        $form = $this->createFormBuilder($post)
+                ->add('title', TextType::class)
+                ->add('content', TextType::class)
+                ->add('published', DateType::class)
+                ->getForm();
+
+        return $this->render('blog/newPost.html.twig',[
+            'form' => $form->createView(),
+            ]);
+    }
+}
+
+/*
         $entityManager = $this->getDoctrine()->getManager();
         $post = new PostEntity();
         $post->setTitle('Titre');
@@ -43,5 +67,4 @@ class BlogController extends AbstractController
         $post->setPublished(new DateTime);
         $entityManager->persist($post);
         $entityManager->flush();
-    }
-}
+*/
