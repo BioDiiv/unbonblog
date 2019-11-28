@@ -7,6 +7,18 @@ body {
 
 /* Adding some textures to the header footers */
 .navbar, footer {
-    background-color: #7a7a7a;
-    background-image: url("https://www.transparenttextures.com/patterns/buried.png");
+    /*background-color: transparent;*/
+    background-image: url("https://www.transparenttextures.com/patterns/dark-circles.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+} 
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }
