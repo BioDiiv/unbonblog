@@ -7,6 +7,7 @@ use App\Entity\PostEntity;
 use \DateTime;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\HttpFoundation\Request;
 
 class BlogController extends AbstractController
 {
@@ -39,14 +40,14 @@ class BlogController extends AbstractController
     /**
      * @Route("/new", name="newPost")
      */
-    public function addPost(){
+    public function addPost(Request $request){
         $post = new PostEntity();
         $post->setTitle('');
         $post->setUrl('');
         $post->setContent('');
         $post->setPublished(new DateTime);
 
-        $form = $this->createFormBuilder($post)
+         $form = $this->createFormBuilder($post)
                 ->add('title', TextType::class, array(
                                              'attr' => array(
                                                  'placeholder' => 'Un bon titre',
@@ -57,6 +58,16 @@ class BlogController extends AbstractController
                                              )))
                 ->getForm();
 
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($post);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('blog');
+        }
+
         return $this->render('blog/newPost.html.twig',[
             'form' => $form->createView(),
             ]);
@@ -64,12 +75,5 @@ class BlogController extends AbstractController
 }
 
 /*
-        $entityManager = $this->getDoctrine()->getManager();
-        $post = new PostEntity();
-        $post->setTitle('Titre');
-        $post->setUrl('url');
-        $post->setContent('Content here');
-        $post->setPublished(new DateTime);
-        $entityManager->persist($post);
-        $entityManager->flush();
+
 */
