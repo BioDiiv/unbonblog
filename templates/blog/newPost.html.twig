@@ -2,6 +2,27 @@
 
 {% block body %}
 
-    {{ form(form) }}
+
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    <div class="m-5">
+        {{ form_start(form) }}
+
+            {{ form_errors(form) }}
+
+            <div class="form-group">
+                <label for="titre">Titre</label>
+                {{ form_widget(form.title, {class: 'form-control'}, "") }}
+            </div>
+            <div class="form-group">
+                <label for="content">Contenu</label>
+                {{ form_widget(form.content, {class: 'form-control'}) }}
+            </div>
+
+            <div class="text-center">
+                <input type="submit" class="btn btn-primary" />
+            </div>
+
+        {{ form_end(form) }}
+    </div>
 
 {% endblock %}
