@@ -5,6 +5,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\PostEntity;
 use \DateTime;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class BlogController extends AbstractController
 {
@@ -13,7 +15,50 @@ class BlogController extends AbstractController
      */
     public function homePage()
     {
+        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
+        $posts = $repository->findAll();
 
+        return $this->render('blog/homepage.html.twig', [
+            'posts' => $posts,
+            ]);
+    }
+
+    /**
+     * @Route("/post/{postId}", name="postById")
+     */
+    public function post(int $postId)
+    {
+        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
+        $post = $repository->find($postId);
+
+        return $this->render('blog/post.html.twig', [
+            'post' => $post,
+            ]);
+    }
+
+    /**
+     * @Route("/new", name="newPost")
+     */
+    public function addPost(){
+        $post = new PostEntity();
+        $post->setTitle('Titre');
+        $post->setUrl('url');
+        $post->setContent('Content here');
+        $post->setPublished(new DateTime);
+
+        $form = $this->createFormBuilder($post)
+                ->add('title', TextType::class)
+                ->add('content', TextType::class)
+                ->add('published', DateType::class)
+                ->getForm();
+
+        return $this->render('blog/newPost.html.twig',[
+            'form' => $form->createView(),
+            ]);
+    }
+}
+
+/*
         $entityManager = $this->getDoctrine()->getManager();
         $post = new PostEntity();
         $post->setTitle('Titre');
@@ -22,25 +67,4 @@ class BlogController extends AbstractController
         $post->setPublished(new DateTime);
         $entityManager->persist($post);
         $entityManager->flush();
-
-        $array = array();
-        array_push($array, "apple", "raspberry", "orange");
-        return $this->render('blog/homepage.html.twig', [
-                           'posts' => $array,
-                       ]);
-    }
-    /**
-     * @Route("/post/{postId}", name="app_post")
-     */
-    public function post($postId)
-    {
-
-        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
-        $posts = $repository->findAll();
-
-        return $this->render('blog/post.html.twig', [
-            'page_title' => 'Article',
-            'posts' => $posts,
-            'post_id' => $postId]);
-    }
-}
+*/

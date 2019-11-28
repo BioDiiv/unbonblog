@@ -8,8 +8,8 @@
                 <img class="card-img-top" src="https://source.unsplash.com/random/800x150" alt="Card image cap">
                 <div class="card-body pl-3 pr-3">
                     <h5 class="card-title">Article du blog</h5>
-                    <p class="card-text">{{ post }}</p>
-                    <a href="#" class="btn btn-primary">Lire</a>
+                    <p class="card-text">{{ post.content }}</p>
+                    <a href="{{ path('postById', {'postId': post.id}) }}" class="btn btn-primary">Lire</a>
                 </div>
             </div>
         {% endfor %}
