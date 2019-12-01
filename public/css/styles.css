@@ -1,8 +1,16 @@
 /* Our custom CSS rules */
 
+html,
 body {
-    /*for testing purpose only
-    background-color : blue; */
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
 }
 
 /* Adding some textures to the header footers */
@@ -13,7 +21,6 @@ body {
 
 
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -22,7 +29,7 @@ footer {
     text-align: center;
 }
 
-.dark-mode{
+.dark-mode {
     background-color: rgb(43, 43, 43);
     color: rgb(66, 66, 66);
   }
@@ -47,7 +54,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(255, 214, 102);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -62,21 +69,21 @@ footer {
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
-  background: url('../images/sun.png');
+  background: url('../images/ionicon_sunny.svg');
 }
 
 input:checked + .slider {
-  background-color: rgb(0, 15, 27);
+  background-color: rgb(136, 211, 255);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px rgb(0, 5, 8);
+  box-shadow: 0 0 1px rgb(104, 104, 104);
 }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-  background: url('../images/moon.svg') no-repeat;
+  background: url('../images/ionicon_moon.svg') no-repeat;
   background-size: 24px 24px;
 }

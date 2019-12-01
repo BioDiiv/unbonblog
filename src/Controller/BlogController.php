@@ -61,6 +61,19 @@ class BlogController extends AbstractController
             'form' => $form->createView(),
             ]);
     }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function aboutPage()
+    {
+        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
+        $elems = $repository->findAll();
+
+        return $this->render('blog/about.html.twig', [
+            'elems' => $elems,
+            ]);
+    }
 }
 
 /*

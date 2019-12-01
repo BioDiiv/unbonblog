@@ -12,7 +12,7 @@
         {% endblock %}
     
     </head>
-    <body>
+    <body class="d-flex flex-column">
         <!-- Page base template -->
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
@@ -30,31 +30,31 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link text-dark" href="mailto:unbonblog@lebonblog.com">Contact</a>
                     </li>
-                    </div>
-                    <li class="nav-item mr-auto float-left" style="list-style-type: none;">
-                        <button class="float-right btn btn-primary">Login</button>
-                    </li>
-                    <li class="nav-item mr-auto float-left" style="list-style-type: none;">
+                    </ul>
+                </div>
+                    <li class="nav-item mt-2 mr-2 float-right" style="list-style-type: none;">
                         <!-- Rectangular switch -->
                         <label class="switch">
                             <input type="checkbox" onclick="toggleDarkMode()">
                             <span class="slider"></span>
                         </label>
                     </li>
-
-                </div>
+                    <li class="nav-item mr-auto float-left" style="list-style-type: none;">
+                        <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
+                        <button class="float-left btn btn-primary">Login</button>
+                    </li>
                 </nav>
             </header>
-        <div  style="width: 80%;" class="mx-auto">
+        <div  style="width: 80%;" class="mx-auto" id="page-content">
         {% block body %}
         <!-- Here the rest of the content -->
         {% endblock %}
         </div>
         
         <!-- Footer -->
-        <footer style="height:50px;" class="bg-secondary d-flex align-items-center shadow-sm">
+        <footer id="sticky-footer" style="height:50px;" class="bg-secondary d-flex align-items-center shadow-sm">
                 <!-- Copyright -->
-                <div class="container text-center font-weight-bold text-dark">Copyright @unbonblog<i class="icon ion-md-heart"></i></div>
+                <div class="container text-center font-weight-bold text-dark">Copyright @unbonblog <i class="icon ion-md-happy"></i></div>
                 <!-- Copyright -->
         </footer>
         <!-- Footer -->

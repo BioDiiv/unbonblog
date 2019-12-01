@@ -5,11 +5,14 @@
     <section class="content">
         {% for post in posts %}
             <div class="card shadow m-5 border-0">
-                <img class="card-img-top" src="https://source.unsplash.com/random/800x150" alt="Card image cap">
+                <img class="card-img-top" src="https://source.unsplash.com/800x150/?'{{post.title}}" alt="Card image cap">
                 <div class="card-body pl-3 pr-3">
-                    <h5 class="card-title">Article du blog</h5>
+                    <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.content }}</p>
                     <a href="{{ path('postById', {'postId': post.id}) }}" class="btn btn-primary float-right">Lire</a>
+                    <p>
+                        {{ post.published|date('Y-m-d H:i:s') }}
+                    </p>
                 </div>
             </div>
         {% endfor %}
