@@ -2,9 +2,11 @@
 
 {% block body %}
 
-
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
-    <div class="m-5">
+    <div class="m-5 mx-auto" style="width: 60%">
+
+        <h1 class="text-center"> Nouveau post </h1>
+
         {{ form_start(form) }}
 
             {{ form_errors(form) }}
@@ -23,6 +25,7 @@
             </div>
 
         {{ form_end(form) }}
+
     </div>
 
 {% endblock %}
