@@ -1,5 +1,4 @@
 /* Our custom CSS rules */
-
 html,
 body {
   height: 100%;
@@ -15,9 +14,18 @@ body {
 
 .darkmode {
   background-color: rgb(43, 43, 43);
-  color: rgb(66, 66, 66);
+  /*color: rgb(66, 66, 66);*/
+  --text-color-content: rgb(66, 66, 66);
+  --text-color-title: rgb(238, 238, 238);
 }
 
+a {
+  color: var(--text-color-title);
+}
+
+h1, h2, h3, h3, h4, h5, h6 {
+  color: var(--text-color-title);
+}
 
 /* Adding some textures to the header footers */
 .navbar, footer {
@@ -26,14 +34,21 @@ body {
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 } 
 
+header {
+    color: var(--text-color-title);
+}
 
 footer {
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: red;
-    color: white;
+    color: var(--text-color-title);
     text-align: center;
+}
+
+#page-content {
+  color: var(--text-color-content);
 }
 
   .switch {
