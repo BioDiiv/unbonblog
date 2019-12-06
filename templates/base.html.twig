@@ -12,10 +12,10 @@
         {% endblock %}
     
     </head>
-    <body class="d-flex flex-column">
+    <body class="d-flex flex-column" id="toggler-container">
         <!-- Page base template -->
             <header>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="navbar">
                 <a class="navbar-brand" href="/"><h1>Un bon blog</h1></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                     <li class="nav-item mt-2 mr-2 float-right" style="list-style-type: none;">
                         <!-- Rectangular switch -->
                         <label class="switch">
-                            <input type="checkbox" onclick="toggleDarkMode()">
+                            <input type="checkbox" class="dark-mode-toggle" id="dark-mode-toggle">
                             <span class="slider"></span>
                         </label>
                     </li>

@@ -13,9 +13,16 @@ body {
   flex-shrink: none;
 }
 
+.darkmode {
+  background-color: rgb(43, 43, 43);
+  color: rgb(66, 66, 66);
+}
+
+
 /* Adding some textures to the header footers */
 .navbar, footer {
     background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
+
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 } 
 
@@ -28,11 +35,6 @@ footer {
     color: white;
     text-align: center;
 }
-
-.dark-mode {
-    background-color: rgb(43, 43, 43);
-    color: rgb(66, 66, 66);
-  }
 
   .switch {
   position: relative;
