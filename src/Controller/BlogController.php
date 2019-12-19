@@ -78,16 +78,12 @@ class BlogController extends AbstractController
      */
     public function aboutPage()
     {
-        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
-        $elems = $repository->findAll();
-
         return $this->render('blog/about.html.twig', [
-            'elems' => $elems,
             ]);
     }
 
     /**
-    * @Route("/post/{postId}/edit", name="about")
+    * @Route("/post/{postId}/edit", name="edit")
     */
     public function editPost(int $postId, Request $request)
     {
@@ -115,5 +111,19 @@ class BlogController extends AbstractController
         return $this->render('blog/editPost.html.twig',[
             'form' => $form->createView(),
             ]);
+    }
+
+    /**
+    * @Route("/post/{postId}/delete", name="delete")
+    */
+    public function deletePost(int $postId, Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
+        $post = $repository->find($postId);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($post);
+        $entityManager->flush();
+        return $this->redirect('/');
     }
 }
