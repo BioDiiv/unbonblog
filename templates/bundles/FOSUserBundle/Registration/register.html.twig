@@ -1,5 +1,42 @@
-{% extends "@FOSUser/layout.html.twig" %}
+{% extends 'base.html.twig' %}
 
-{% block fos_user_content %}
-{% include "@FOSUser/Registration/register_content.html.twig" %}
-{% endblock fos_user_content %}
+{% block body %}
+
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    <div class="m-5 mx-auto" style="width: 60%">
+
+        <h1 class="text-center"> Inscription </h1>
+
+        {{ form_start(form) }}
+
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            {{ form_widget(form.email, {class: 'form-control'}, "") }}
+        </div>
+
+        <div class="form-group">
+            <label for="titre">Username</label>
+            {{ form_widget(form.username, {class: 'form-control'}, "") }}
+        </div>
+
+        <div class="form-group">
+            <label for="titre">Mot de passe</label>
+            {{ form_widget(form.plainPassword.first, {class: 'form-control'}, "") }}
+        </div>
+
+        <div class="form-group">
+            <label for="titre">Confirmer mot de passe</label>
+            {{ form_widget(form.plainPassword.second, {class: 'form-control'}, "") }}
+        </div>
+
+        <div class="text-center">
+            <input type="submit" class="btn btn-primary" value="S'enregistrer"/>
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

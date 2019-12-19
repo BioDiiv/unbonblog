@@ -11,7 +11,9 @@ body {
 #sticky-footer {
   flex-shrink: none;
 }
-
+label{
+  color : var(--text-color-title);
+}
 .darkmode {
   background-color: rgb(43, 43, 43);
   /*color: rgb(66, 66, 66);*/
