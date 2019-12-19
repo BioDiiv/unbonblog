@@ -85,8 +85,35 @@ class BlogController extends AbstractController
             'elems' => $elems,
             ]);
     }
+
+    /**
+    * @Route("/post/{postId}/edit", name="about")
+    */
+    public function editPost(int $postId, Request $request)
+    {
+         $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
+         $post = $repository->find($postId);
+
+         $form = $this->createFormBuilder($post)
+                ->add('title', TextType::class, array(
+                                             'attr' => array(
+                                                 'placeholder' => 'Un bon titre',
+                                             )))
+                ->add('content', Textareatype::class,array(
+                                             'attr' => array(
+                                                 'placeholder' => 'Un bon article',
+                                             )))
+                ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
+            return $this->redirect('/post/' . $postId);
+        }
+
+        return $this->render('blog/editPost.html.twig',[
+            'form' => $form->createView(),
+            ]);
+    }
 }
-
-/*
-
-*/

@@ -22,5 +22,5 @@ let cardImage = document.querySelector(".card-image");
 const cardImages = document.querySelectorAll(".card-image");
 	[...cardImages].forEach(cardImage => {
             var keyword = keywords[Math.floor(Math.random() * keywords.length)];
-            cardImage.src = `https://source.unsplash.com/1600x900/?${keyword}`;
+            cardImage.src = `https://source.unsplash.com/800x150/?${keyword}`;
 	});
