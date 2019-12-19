@@ -2,16 +2,16 @@
 
 {% block body %}
     <section class="content">
-    <div class="card shadow m-5 border-0">
-        <img class="card-image card-img-top" src="https://source.unsplash.com/800x150/?'image" alt="Card image cap">
-        <div class="card-body pl-3 pr-3">
-            <h3>{{ post.title }}</h3>
-            <h5>{{ post.published|date('Y-m-d H:i:s') }}<h2>
-
-            <hr />
-
-            <p>{{ post.content }}</p>
-        </div>
-    </div>
+            <div class="card shadow m-5 border-0">
+                <!-- <img class="card-img-top" src="https://source.unsplash.com/800x150/?'{{post.title}}" alt="Card image cap" id="card-image"> -->
+                <img class="card-image card-img-top" src="" alt="Card image cap">
+                <div class="card-body pl-3 pr-3">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content }}</p>
+                    <p>
+                        {{ post.published|date('Y-m-d H:i:s') }}
+                    </p>
+                </div>
+            </div>
     </section>
 {% endblock %}
