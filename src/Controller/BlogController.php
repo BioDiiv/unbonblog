@@ -41,6 +41,10 @@ class BlogController extends AbstractController
      * @Route("/new", name="newPost")
      */
     public function addPost(Request $request){
+
+        if (!$this->container->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            return $this->redirect('/');
+        }
         $post = new PostEntity();
         $post->setTitle('');
         $post->setUrl('');
@@ -108,6 +112,10 @@ class BlogController extends AbstractController
             return $this->redirect('/post/' . $postId);
         }
 
+        if (!$this->container->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            return $this->redirect('/');
+        }
+
         return $this->render('blog/editPost.html.twig',[
             'form' => $form->createView(),
             ]);
@@ -118,6 +126,9 @@ class BlogController extends AbstractController
     */
     public function deletePost(int $postId, Request $request)
     {
+        if (!$this->container->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+                return $this->redirect('/');
+            }
         $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
         $post = $repository->find($postId);
 
