@@ -11,9 +11,7 @@ body {
 #sticky-footer {
   flex-shrink: none;
 }
-label{
-  color : var(--text-color-title);
-}
+
 .darkmode {
   background-color: rgb(43, 43, 43);
   /*color: rgb(66, 66, 66);*/
@@ -29,10 +27,13 @@ h1, h2, h3, h3, h4, h5, h6 {
   color: var(--text-color-title);
 }
 
+label{
+  color : var(--text-color-title);
+}
+
 /* Adding some textures to the header footers */
 .navbar, footer {
     background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
-
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 } 
 
@@ -53,7 +54,7 @@ footer {
   color: var(--text-color-content);
 }
 
-  .switch {
+.switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -113,4 +114,8 @@ input:checked + .slider:before {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-color-title);
 }

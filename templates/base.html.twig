@@ -15,38 +15,45 @@
     <body class="d-flex flex-column" id="toggler-container">
         <!-- Page base template -->
             <header>
-                <nav class="navbar navbar-expand-lg bg-light shadow" id="navbar">
-                <a class="navbar-brand" href="/"><h1>Un bon blog</h1></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <nav class="navbar navbar-expand-lg bg-dark navbar-light bg-inverse" id="navbar">
+                    <a class="navbar-brand" href="/"><h1>Un bon blog</h1></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-10">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">A propos</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="mailto:unbonblog@lebonblog.com">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                    <li class="nav-item mt-2 mr-2 float-right" style="list-style-type: none;">
-                        <!-- Rectangular switch -->
-                        <label class="switch">
-                            <input type="checkbox" class="dark-mode-toggle" id="dark-mode-toggle">
-                            <span class="slider"></span>
-                        </label>
-                    </li>
-                    <li class="nav-item mr-auto float-left" style="list-style-type: none;">
-                        <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                        <a href="/login"><button class="btn btn-primary">Login</button></a>
-                    </li>
-                    <li class="nav-item mr-auto float-right" style="list-style-type: none;">
-                        <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                        <a href="/register"><button class="float-right btn btn-primary">Register</button></a>
-                    </li>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- <div class="col-10"> -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">A propos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="mailto:unbonblog@lebonblog.com">Contact</a>
+                            </li>
+                        </ul>
+                    <!-- </div> -->
+
+                        <span class="nav-item ml-auto">
+                            <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
+                            <a href="/login"><button class="btn btn-primary">Login</button></a>
+                        </span>
+                        
+                        <span class="nav-item">
+                            <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
+                            <a href="/register"><button class="float-right btn btn-primary">Register</button></a>
+                        </span>
+                    
+                                        
+                        <span class="nav-item mt-2 mr-2 ml-0">
+                            <!-- Rectangular switch -->
+                            <label class="switch">
+                                <input type="checkbox" class="dark-mode-toggle" id="dark-mode-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </span>
+
+                    </div>
+
                 </nav>
             </header>
         <div  style="width: 80%;" class="mx-auto" id="page-content">
