@@ -12,10 +12,12 @@
                         <p>
                             {{ post.published|date('Y-m-d H:i:s') }}
                         </p>
+                        {% if is_granted('ROLE_USER') %}
                         <div>
                             <a href="/post/{{ post.id }}/edit"><button class="btn btn-info">Editer</button></a>
                             <a href="/post/{{ post.id }}/delete"><button class="btn btn-warning">Supprimer</button></a>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
