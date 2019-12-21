@@ -166,6 +166,21 @@ input:checked + .slider:before {
   }
 }
 
+/* for screens with width below and equals to 768px */
+@media screen and (max-width: 767px) {
+  .collapse {
+    font-size: 1em;
+  }
+
+  .navbar-button {
+    padding: 0.75rem 2rem;
+  }
+
+  span.nav-item {
+    font-size: 1em;
+  }
+}
+
 /* for screens with width below and equals to 404px */
 @media screen and (max-width: 404px) {
   .card {
