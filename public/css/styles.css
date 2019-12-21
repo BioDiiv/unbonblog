@@ -129,6 +129,36 @@ input:checked + .slider:before {
   color: var(--text-color-title);
 }
 
+/* for screens with width below and equals to 980px */
+@media screen and (max-width: 980px) {
+  .collapse {
+    font-size: 0.9em;
+  }
+
+  .navbar-button {
+    padding: 0.33rem 1rem;
+  }
+
+  span.nav-item {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .collapse {
+    font-size: 0.7em;
+  }
+
+  .navbar-button {
+    padding: 0.15rem 0.5rem;
+  }
+
+  span.nav-item {
+    font-size: 0.7em;
+  }
+}
+
+
 /* for screens with width below and equals to 768px */
 @media screen and (max-width: 768px) {
   #page-content {

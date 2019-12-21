@@ -15,7 +15,7 @@
     <body class="d-flex flex-column" id="toggler-container">
         <!-- Page base template -->
             <header>
-                <nav class="bg-light navbar navbar-expand-lg navbar-light bg-inverse" id="navbar">
+                <nav class="bg-light navbar navbar-expand-md navbar-light bg-inverse" id="navbar">
                     <a class="navbar-brand" href="/"><h1>Un bon blog</h1></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -35,21 +35,21 @@
                         {% if is_granted('ROLE_USER') %}
                             <span class="nav-item ml-auto">
                             <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                            <a href="/new"><button class="btn btn-info">Créer UnBonPost</button></a>
+                            <a href="/new"><button class="btn btn-info navbar-button">Créer UnBonPost</button></a>
                             </span>
                             <span class="nav-item">
                             <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                            <a href="/logout"><button class="btn btn-warning">Logout</button></a>
+                            <a href="/logout"><button class="btn btn-warning navbar-button">Logout</button></a>
                             </span>
                         {% else %}
                             <span class="nav-item ml-auto">
                                 <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                                <a href="/login"><button class="btn btn-primary">Login</button></a>
+                                <a href="/login"><button class="btn btn-primary navbar-button">Login</button></a>
                             </span>
                             
                             <span class="nav-item">
                                 <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                                <a href="/register"><button class="float-right btn btn-primary">Register</button></a>
+                                <a href="/register"><button class="float-right btn btn-primary navbar-button">Register</button></a>
                             </span>
                         {% endif %}
                                                             
