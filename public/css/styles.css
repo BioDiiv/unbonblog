@@ -60,6 +60,7 @@ footer {
 
 #page-content {
   color: var(--text-color-content);
+  width: 80%;
 }
 
 .switch {
@@ -127,3 +128,18 @@ input:checked + .slider:before {
 .navbar-light .navbar-nav .nav-link {
   color: var(--text-color-title);
 }
+
+/* for screens with width below and equals to 768px */
+@media screen and (max-width: 768px) {
+  #page-content {
+    width: 100%;
+  }
+}
+
+/* for screens with width below and equals to 404px */
+@media screen and (max-width: 404px) {
+  .card {
+    margin: 0 !important;
+  }
+}
+
