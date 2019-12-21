@@ -32,18 +32,27 @@
                             </li>
                         </ul>
                     <!-- </div> -->
-
-                        <span class="nav-item ml-auto">
+                        {% if is_granted('ROLE_USER') %}
+                            <span class="nav-item ml-auto">
                             <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                            <a href="/login"><button class="btn btn-primary">Login</button></a>
-                        </span>
-                        
-                        <span class="nav-item">
+                            <a href="/new"><button class="btn btn-info">Créer UnBonPost</button></a>
+                            </span>
+                            <span class="nav-item">
                             <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                            <a href="/register"><button class="float-right btn btn-primary">Register</button></a>
-                        </span>
-                    
-                                        
+                            <a href="/logout"><button class="btn btn-warning">Logout</button></a>
+                            </span>
+                        {% else %}
+                            <span class="nav-item ml-auto">
+                                <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
+                                <a href="/login"><button class="btn btn-primary">Login</button></a>
+                            </span>
+                            
+                            <span class="nav-item">
+                                <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
+                                <a href="/register"><button class="float-right btn btn-primary">Register</button></a>
+                            </span>
+                        {% endif %}
+                                                            
                         <span class="nav-item mt-2 mr-2 ml-0">
                             <!-- Rectangular switch -->
                             <label class="switch">
