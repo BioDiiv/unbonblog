@@ -9,7 +9,7 @@
 //set one keyword for the image, will need to be chosen bet
 //let keyword = 'image';
 
-let keywords = ['nature', 'urban', 'architecture', 'beach', 'winter', 'summer', 'spring', 'autumn', 'work'];
+let keywords = ['nature', 'urban', 'architecture', 'beach', 'winter', 'summer', 'spring', 'autumn', 'work', 'design'];
 
 //target url with the selected keyword
 //let url = `https://source.unsplash.com/1600x900/?${keywords}`;
@@ -22,5 +22,5 @@ let cardImage = document.querySelector(".card-image");
 const cardImages = document.querySelectorAll(".card-image");
 	[...cardImages].forEach(cardImage => {
             var keyword = keywords[Math.floor(Math.random() * keywords.length)];
-            cardImage.src = `https://source.unsplash.com/800x150/?${keyword}`;
+            cardImage.src = `https://source.unsplash.com/1600x300/?${keyword}`;
 	});
