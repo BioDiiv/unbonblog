@@ -1,6 +1,7 @@
-index:
-    path: /
-    controller: App\Controller\BlogController::index
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
