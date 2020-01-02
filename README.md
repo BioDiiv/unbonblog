@@ -10,7 +10,7 @@ Les routes /new (ajouter un post), /post/edit (editer le post) et post/delete (s
 Le blog implémente FosUser pour se connecter et accéder à ses fonctionnalités.
 
 Voici un identifiant enregistré : 
-id  : adminblog@unbonblog.fr
+id  : adminblog
 mdp : unbonmotdepasse
 
 
