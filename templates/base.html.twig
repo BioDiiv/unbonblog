@@ -47,7 +47,7 @@
                         {% else %}
                             <span class="nav-item ml-auto">
                                 <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                                <a href="/login"><button class="btn btn-primary navbar-button">Login</button></a>
+                                <a href="{{ path('fos_user_security_login') }}"><button class="btn btn-primary navbar-button">Login</button></a>
                             </span>
                             
                             <span class="nav-item">
