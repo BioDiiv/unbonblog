@@ -21,9 +21,7 @@ security:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
 
-            logout:
-                path:        /logout
-                target:      /
+            logout:       true
             anonymous:    true
 
     access_control:
