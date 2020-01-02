@@ -42,7 +42,7 @@
                             </span>
                             <span class="nav-item">
                             <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                            <a href="/logout"><button class="btn btn-warning navbar-button">Logout</button></a>
+                            <a href="{{ path('fos_user_security_logout') }}"><button class="btn btn-warning navbar-button">Logout</button></a>
                             </span>
                         {% else %}
                             <span class="nav-item ml-auto">
@@ -52,7 +52,7 @@
                             
                             <span class="nav-item">
                                 <!-- @TODO : if user (admin) is logged-in, then display "Créer un post" instead of "Login" -->
-                                <a href="/register"><button class="float-right btn btn-primary navbar-button">Register</button></a>
+                                <a href="{{ path('fos_user_registration_register') }}"><button class="float-right btn btn-primary navbar-button">Register</button></a>
                             </span>
                         {% endif %}
                                                             
