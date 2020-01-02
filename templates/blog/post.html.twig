@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
     <section class="content">
+        {% if (post != null) %}
             <div class="card shadow m-5 border-0">
                 <!-- <img class="card-img-top" src="https://source.unsplash.com/800x150/?'{{post.title}}" alt="Card image cap" id="card-image"> -->
                 <img class="card-image card-img-top" src="" alt="Card image cap">
@@ -21,5 +23,9 @@
                     </div>
                 </div>
             </div>
+        {% else %}
+            <h1 class="text-center">Ce post n'existe pas :(</h1>
+        {% endif %}
     </section>
+
 {% endblock %}

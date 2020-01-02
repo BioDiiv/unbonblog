@@ -72,6 +72,8 @@ class CrudController extends AbstractController
                 ->getForm();
 
         $form->handleRequest($request);
+
+        // Wh
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();

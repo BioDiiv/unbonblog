@@ -20,7 +20,7 @@ class BlogController extends AbstractController
         $posts = $repository->findBy(
             array(),
             array('published' => 'DESC')
-        );; // Pour récupérer et trier les posts du plus récent aux plus anciens
+        );; // get and sort all posts from the most recent to the oldest
 
         return $this->render('blog/homepage.html.twig', [
             'posts' => $posts,
@@ -33,7 +33,7 @@ class BlogController extends AbstractController
     public function post(int $postId)
     {
         $repository = $this->getDoctrine()->getRepository(PostEntity::Class);
-        $post = $repository->find($postId);
+        $post = $repository->find($postId); // get post with id = $postid
 
         return $this->render('blog/post.html.twig', [
             'post' => $post,
