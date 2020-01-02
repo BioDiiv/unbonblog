@@ -2,3 +2,11 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
+register:
+    path: /register
+
+login:
+    path: /login
+
+logout:
+    path: /logout
