@@ -10,7 +10,7 @@
                     <p class="card-text">{{ post.content }}</p>
                     <div class="d-flex justify-content-between">
                         <p>
-                            {{ post.published|date('Y-m-d H:i:s') }}
+                            {{ post.published|date('d-m-Y H:i:s') }}
                         </p>
                         {% if is_granted('ROLE_USER') %}
                         <div>

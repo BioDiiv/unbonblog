@@ -12,7 +12,7 @@
                     <p class="card-text post-content-reduce">{{ post.content }}</p>
                     <a href="{{ path('postById', {'postId': post.id}) }}" class="btn btn-primary float-right">Lire</a>
                     <p>
-                        {{ post.published|date('Y-m-d H:i:s') }}
+                        {{ post.published|date('d-m-Y H:i') }}
                     </p>
                 </div>
             </div>
