@@ -9,7 +9,7 @@ Lefebvre Thomas et Roussé Julien
 Les routes /new (ajouter un post), /post/edit (editer le post) et post/delete (supprimer le post), ne sont disponibles que pour un utilisateur (admin) connecté.
 Le blog implémente FosUser pour se connecter et accéder à ses fonctionnalités.
 
-Voici un identifiant enregistré : 
+Voici un admin enregistré : 
 id  : adminblog
 mdp : unbonmotdepasse
 
